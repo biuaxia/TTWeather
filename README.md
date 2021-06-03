@@ -4,7 +4,7 @@ Telegram-Bot
 
 # How to use ?
 
-```go
+```bash
 go mod init TTWeather
 go mod tidy
 go get -u gopkg.in/tucnak/telebot.v2
