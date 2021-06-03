@@ -13,3 +13,10 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# Jetbrain
+.idea/
+
+# Go-mod
+go.mod
+sum.mod
