@@ -1,31 +1,11 @@
 package main
 
 import (
-	"fmt"
+	"TTWeather/common"
 	tb "gopkg.in/tucnak/telebot.v2"
 	"log"
-	"net/http"
-	"net/url"
 	"time"
 )
-
-// buildClient is a method used to construct a request proxy.
-func buildClient(host string, port int) *http.Client {
-	proxyUrl := fmt.Sprintf("http://%s:%d", host, port)
-
-	uri, err := url.Parse(proxyUrl)
-
-	if err != nil {
-		log.Fatal("error parsing proxy url: ", err)
-	}
-
-	return &http.Client{
-		Transport: &http.Transport{
-			// 设置代理
-			Proxy: http.ProxyURL(uri),
-		},
-	}
-}
 
 // main, use LongPoller receive user send content, but received '/hello' command,
 // will send to user 'Hello World!'.
@@ -35,10 +15,10 @@ func main() {
 	port := 8889
 
 	// Token, form BotFather
-	token := ""
+	token := "1755685454:AAHEf3BRaYKj-l8oC_m6V8JL02Gwk77mOM4"
 
 	b, err := tb.NewBot(tb.Settings{
-		Client: buildClient(host, port),
+		Client: common.BuildClient(host, port),
 
 		Token:  token,
 		Poller: &tb.LongPoller{Timeout: 10 * time.Second},
