@@ -15,7 +15,7 @@ func main() {
 	port := 8889
 
 	// Token, form BotFather
-	token := "1755685454:AAHEf3BRaYKj-l8oC_m6V8JL02Gwk77mOM4"
+	token := ""
 
 	b, err := tb.NewBot(tb.Settings{
 		Client: common.BuildClient(host, port),
